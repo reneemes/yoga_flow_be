@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,53 +12,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_18_202547) do
+ActiveRecord::Schema[7.1].define(version: 20_250_118_202_547) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "poses", force: :cascade do |t|
-    t.integer "api_id"
-    t.string "name"
-    t.string "sanskrit_name"
-    t.text "description"
-    t.string "pose_benefits"
-    t.string "category"
-    t.string "difficulity"
-    t.string "translation_name"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'poses', force: :cascade do |t|
+    t.integer 'api_id'
+    t.string 'name'
+    t.string 'sanskrit_name'
+    t.text 'description'
+    t.string 'pose_benefits'
+    t.string 'category'
+    t.string 'difficulity'
+    t.string 'translation_name'
+    t.string 'image_url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "routine_poses", force: :cascade do |t|
-    t.bigint "routine_id", null: false
-    t.bigint "pose_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pose_id"], name: "index_routine_poses_on_pose_id"
-    t.index ["routine_id"], name: "index_routine_poses_on_routine_id"
+  create_table 'routine_poses', force: :cascade do |t|
+    t.bigint 'routine_id', null: false
+    t.bigint 'pose_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['pose_id'], name: 'index_routine_poses_on_pose_id'
+    t.index ['routine_id'], name: 'index_routine_poses_on_routine_id'
   end
 
-  create_table "routines", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.string "difficulty"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_routines_on_user_id"
+  create_table 'routines', force: :cascade do |t|
+    t.string 'name'
+    t.text 'description'
+    t.string 'difficulty'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_routines_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.integer "streak"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.string 'password_digest'
+    t.integer 'streak'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "routine_poses", "poses"
-  add_foreign_key "routine_poses", "routines"
-  add_foreign_key "routines", "users"
+  add_foreign_key 'routine_poses', 'poses'
+  add_foreign_key 'routine_poses', 'routines'
+  add_foreign_key 'routines', 'users'
 end

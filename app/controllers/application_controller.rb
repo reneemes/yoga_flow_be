@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::API
-  
   def current_user
-    @current_user ||= self.authenticate_user
+    @current_user ||= authenticate_user
   end
 
   private
@@ -17,11 +18,10 @@ class ApplicationController < ActionController::API
       end
     end
     render json: { error: 'Not authenticated' }, status: :unauthorized unless @current_user
-    return @current_user
+    @current_user
   end
 
   def decoded_token(token)
     JWT.decode(token, Rails.application.secret_key_base, true, { algorithm: 'HS256' })[0].symbolize_keys
   end
-
 end

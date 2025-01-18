@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateRoutinePoses < ActiveRecord::Migration[7.1]
   def change
     create_table :routine_poses do |t|
