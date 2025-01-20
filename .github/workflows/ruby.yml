@@ -49,8 +49,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Set up database config
-      run: cp config/database.yml.ci config/database.yml
+    # - name: Set up database config
+    #   run: cp config/database.yml.ci config/database.yml
     - name: Prepare database
       run: bundle exec rails db:create db:migrate
     - name: Run tests
