@@ -49,9 +49,6 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-        
-    # - name: Set up database config
-    #   run: cp config/database.yml.ci config/database.yml
 
     - name: Setup database
       env:
@@ -74,10 +71,4 @@ jobs:
         POSTGRES_PASSWORD: password
         POSTGRES_DB: yoga_flow_test
         POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
-        # SELENIUM_URL: 'http://chrome:4444/wd/hub'
       run: bundle exec rspec
-    
-    # - name: Prepare database
-    #   run: bundle exec rails db:create db:migrate
-    # - name: Run tests
-    #   run: bundle exec rake
