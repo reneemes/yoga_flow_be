@@ -1,0 +1,10 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: yoga_flow_test
+  username: renee
+  password: password
+  host: localhost
+
+test:
+  <<: *default
