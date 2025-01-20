@@ -1,4 +1,4 @@
-test:
+default: &default
   adapter: postgresql
   encoding: unicode
   database: yoga_flow_test
