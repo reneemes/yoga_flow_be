@@ -9,6 +9,8 @@ class YogaGateway
     end
 
     json = JSON.parse(response.body, symbolize_names: true)#[:results]
+    # require 'pry'; binding.pry
+    # json.map { |pose_data| Pose.new(pose_data) }
   end
 
 end
