@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :users, only: :create
       resources :sessions, only: :create
       # resources :poses, only: :index
-      resources :poses, only: [:index]
+      resources :poses, only: [:index, :show]
     end
   end
 end
