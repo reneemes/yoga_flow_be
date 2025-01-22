@@ -39,5 +39,17 @@ RSpec.describe "PosesController", type: :request do
       expect(json[:name]).to eq("Downward-Facing Dog")
       expect(json[:sanskrit_name]).to eq("Parivṛtta Adho Mukha Śvānāsana")
     end
+
+    it "Handles not being able to fetch from the Yoga API - #Show" do
+      stub_request(:get, "https://yoga-api-nzy4.onrender.com/v1/poses?id=15")
+        .to_return(status: 503, body: {error: "Unable to connect to the Yoga Database."}.to_json)
+    
+      get "/api/v1/poses/15"
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(503)
+      expect(json[:message]).to eq("Unable to fetch yoga poses from the Yoga API. Please try again later.")
+    end
   end
 end
