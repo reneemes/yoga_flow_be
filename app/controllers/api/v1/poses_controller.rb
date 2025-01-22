@@ -5,8 +5,8 @@ class Api::V1::PosesController < ApplicationController
     begin
       poses = YogaGateway.get_poses
       render json: PosesSerializer.format_poses(poses), status: :ok
-    rescue => error
-      render json: ErrorSerializer.format_error(error), status: :service_unavailable
+    rescue #Faraday::Error => error
+      render json: { message: "Unable to fetch yoga poses from the Yoga API. Please try again later." }, status: :service_unavailable
     end
   end
 

@@ -24,7 +24,7 @@ RSpec.describe "PosesController", type: :request do
       
       expect(response).to_not be_successful
       expect(response.status).to eq(503)
-      require 'pry'; binding.pry
+      expect(json[:message]).to eq("Unable to fetch yoga poses from the Yoga API. Please try again later.")
     end
   end
 end
