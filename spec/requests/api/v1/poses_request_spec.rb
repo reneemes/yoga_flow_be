@@ -32,12 +32,12 @@ RSpec.describe "PosesController", type: :request do
   describe "#Show Action" do
     it "Returns one pose and detailed information from the Yoga API", :vcr do
       get "/api/v1/poses/15"
-      json = JSON.parse(response.body, symbolize_names: true)
-      require 'pry'; binding.pry
+      json = JSON.parse(response.body, symbolize_names: true)[:data][:attributes]
+
       expect(response).to be_successful
       expect(response.status).to eq(200)
-      expect(json[0][:data][:attributes][:name]).to eq("Downward-Facing Dog")
-      expect(json[0][:data][:attributes][:sanskrit_name]).to eq("Parivṛtta Adho Mukha Śvānāsana")
+      expect(json[:name]).to eq("Downward-Facing Dog")
+      expect(json[:sanskrit_name]).to eq("Parivṛtta Adho Mukha Śvānāsana")
     end
   end
 end

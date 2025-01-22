@@ -13,8 +13,9 @@ class Api::V1::PosesController < ApplicationController
   def show
     # begin
     id = params[:id]
-    poses = YogaGateway.get_one_pose(id)
-    render json: PosesSerializer.format_poses(poses), status: :ok
+    pose = YogaGateway.get_one_pose(id)
+    # require 'pry'; binding.pry
+    render json: PosesSerializer.format_one_pose(pose), status: :ok
     # rescue #Faraday::Error => error
     #   render json: { message: "Unable to fetch yoga poses from the Yoga API. Please try again later." }, status: :service_unavailable
     # end
