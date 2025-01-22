@@ -1,10 +1,8 @@
 class PosesSerializer
   include JSONAPI::Serializer
-  # set_type :pose
-  # set_id { |pose| pose[:id].to_s }
 
   # attributes :english_name, :sanskrit_name, :pose_description, :pose_benefits,
-  #           :category, :difficulty, :translation_name, :url_svg, :url_png#, :image_url
+  #           :category, :difficulty, :translation_name, :image_url
 
   def self.format_poses(poses)
     poses = poses.map do |pose|
