@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://yoga-api-nzy4.onrender.com/v1/poses?id=15
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 22 Jan 2025 03:27:16 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 905c72819b5b5cae-RDU
+      Cf-Cache-Status:
+      - DYNAMIC
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"5f0-XewpGsa49np+eTlACz0fiDvN8N4"
+      Vary:
+      - Accept-Encoding
+      Rndr-Id:
+      - 99b2cb77-52ae-43c2
+      X-Powered-By:
+      - Express
+      X-Render-Origin-Server:
+      - Render
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"id":15,"english_name":"Downward-Facing Dog","sanskrit_name_adapted":"Adho
+        Mukha Svanasana","sanskrit_name":"Parivṛtta Adho Mukha Śvānāsana","translation_name":"parivṛtta
+        = revolved, adho = downward, mukha = facing, śvāna = dog, āsana = posture","pose_description":"From
+        downward_dog.html the legs are straight with the sits bones tilted up and
+        reaching for the sky.  The feet are flat with the heels firmly rooted.  One
+        palm is flat with the knuckles evenly pressed into the earth.  The other hand
+        reaches under the body and grasps the opposite ankle.  The spine is long and
+        the heart is open toward the sky.  The neck is loose and the crown of the
+        head is relaxed toward the earth.  The gaze is toward the center.","pose_benefits":"Calms
+        the brain and helps relieve stress and mild depression.  Energizes the body.  Stretches
+        the shoulders, neck, hamstrings, calves, arches, and hands.  Strengthens the
+        arms and legs.  Helps relieve the symptoms of menopause.  Relieves menstrual
+        discomfort when done with the head supported.  Helps prevent osteoporosis.  Improves
+        digestion.  Relieves headache, insomnia, back pain, and fatigue.  Therapeutic
+        for high blood pressure, asthma, flat feet, sciatica, and sinusitis.","url_svg":"https://res.cloudinary.com/dko1be2jy/image/upload/fl_sanitize/v1676483081/yoga-api/15_vkviqn.svg","url_png":"https://res.cloudinary.com/dko1be2jy/image/upload/fl_sanitize/v1676483081/yoga-api/15_vkviqn.png","url_svg_alt":"https://www.dropbox.com/s/75xa1bduu2u5y7d/downdog.svg?raw=1"}'
+  recorded_at: Wed, 22 Jan 2025 03:27:16 GMT
+recorded_with: VCR 6.3.1

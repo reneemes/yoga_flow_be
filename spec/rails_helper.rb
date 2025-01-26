@@ -1,5 +1,3 @@
-require 'simplecov'
-SimpleCov.start
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -11,7 +9,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 # return unless Rails.env.test?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-
+require 'simplecov'
+SimpleCov.start
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -79,16 +78,13 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-# VCR.configure do |config|
-#   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-#   config.hook_into :webmock
-#   # config.filter_sensitive_data('<ANIMAL_API_KEY>') { Rails.application.credentials.ninja_animals[:key] }
-#   # config.filter_sensitive_data('<PEXEL_API_KEY>') { Rails.application.credentials.pexels[:key] }
-#   # config.filter_sensitive_data('<YOUTUBE_API_KEY>') { Rails.application.credentials.youtube_data_api[:key] }
-#   config.default_cassette_options = { re_record_interval: 7.days }
-#   config.configure_rspec_metadata!
-#   config.allow_http_connections_when_no_cassette = true
-#   config.before_record do |i|
-#     i.response.body.force_encoding('UTF-8')
-#   end
-# end
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.default_cassette_options = { re_record_interval: 7.days }
+  config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
+  config.before_record do |i|
+    i.response.body.force_encoding('UTF-8')
+  end
+end
