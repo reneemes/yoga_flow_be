@@ -1,24 +1,43 @@
-# README
+# YogaFlow by Renee Messersmith
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+YogaFlow is a user-friendly web application designed to create a seamless and engaging experience for yoga enthusiasts. It aims to provide users with the tools to manage their yoga practice and explore additional resources for personal well-being.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
 
-* System dependencies
+## Setup
+Rails 7.1.5
+Ruby 3.2.2
 
-* Configuration
+```
+bundle install
 
-* Database creation
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Database initialization
+## Testing
+This application uses RSpec for testing.
+```
+bundle exec rspec
+```
 
-* How to run the test suite
+## API Documentation
 
-* Services (job queues, cache servers, search engines, etc.)
+### Users
+#### Create a Session (Login)
+Request:
+```
+POST /api/v1/sessions/
 
-* Deployment instructions
+Body:
+{
+  "email": "jane.doe@example.com",
+  "password": "password"
+}
+```
+Successful Response:
 
-* ...
+Error Response:
