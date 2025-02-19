@@ -1,24 +1,113 @@
-# README
+# YogaFlow by Renee Messersmith
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+YogaFlow is a user-friendly web application designed to create a seamless and engaging experience for yoga enthusiasts. It aims to provide users with the tools to manage their yoga practice and explore additional resources for personal well-being.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
 
-* System dependencies
+## Setup
+Rails 7.1.5
+Ruby 3.2.2
 
-* Configuration
+```
+bundle install
 
-* Database creation
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Database initialization
+## Testing
+This application uses RSpec for testing.
+```
+bundle exec rspec
+```
 
-* How to run the test suite
+## API Documentation
 
-* Services (job queues, cache servers, search engines, etc.)
+### Users
+#### Create a Session (Login)
+Request:
+```
+POST /api/v1/sessions/
 
-* Deployment instructions
+Body:
+{
+  "email": "jane.doe@example.com",
+  "password": "password"
+}
+```
+Successful Response:
+```
+{
+  "token": "MY TOKEN",
+  "user": {
+    "data": {
+      "id": "1",
+      "type": "user",
+      "attributes": {
+        "name": "Dolly Parton",
+        "email": "dollyP@email.com"
+      }
+    }
+  }
+}
+```
+Error Response:
+```
+{
+  "status": 401,
+  "message": "Invalid login credentials"
+}
+```
 
-* ...
+### Poses
+Connected to the [Yoga API](https://github.com/alexcumplido/yoga-api).<br>
+#### Get All Poses
+Request: `/api/v1/poses`<br>
+Response:
+```
+[
+  {
+    "data": {
+      "id": "1",
+      "type": "pose",
+      "attributes": {
+        "name": "Boat",
+        "sanskrit_name": "Nāvāsana",
+        "image_url": "URL:"
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "3",
+      "type": "pose",
+      "attributes": {
+        "name": "Bow",
+        "sanskrit_name": "Dhanurāsana",
+        "image_url": "URL"
+      }
+    }
+  }
+]
+```
+#### Get One Pose
+Request: `api/v1/poses/:id`
+Response:
+```
+{
+  "data": {
+    "id": "15",
+    "type": "pose",
+    "attributes": {
+      "name": "Downward-Facing Dog",
+      "sanskrit_name": "Parivṛtta Adho Mukha Śvānāsana",
+      "pose_description": "From downward_dog.html the legs are straight with the sits bones tilted up and reaching for the sky...",
+      "translation_name": "parivṛtta = revolved, adho = downward, mukha = facing, śvāna = dog, āsana = posture",
+      "image_url": "URL"
+    }
+  }
+}
+```
