@@ -2,8 +2,10 @@ class Api::V1::PosesController < ApplicationController
   rescue_from StandardError, with: :handle_standard_error
 
   def index
-    poses = YogaGateway.get_poses
-    render json: PosesSerializer.format_poses(poses), status: :ok
+    file_path = Rails.root.join('public', 'data', 'all_poses.json')
+    file_contents = File.read(file_path)
+    json = JSON.parse(file_contents, symbolize_names: true)
+    render json: PosesSerializer.format_poses(json), status: :ok
   end
 
   def show
