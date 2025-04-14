@@ -19,31 +19,31 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Jan 2025 03:27:16 GMT
+      - Mon, 14 Apr 2025 21:50:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Cf-Ray:
-      - 905c72819b5b5cae-RDU
-      Cf-Cache-Status:
-      - DYNAMIC
       Access-Control-Allow-Origin:
       - "*"
       Etag:
       - W/"5f0-XewpGsa49np+eTlACz0fiDvN8N4"
+      Rndr-Id:
+      - e9792ea8-d176-424a
       Vary:
       - Accept-Encoding
-      Rndr-Id:
-      - 99b2cb77-52ae-43c2
       X-Powered-By:
       - Express
       X-Render-Origin-Server:
       - Render
+      Cf-Cache-Status:
+      - DYNAMIC
       Server:
       - cloudflare
+      Cf-Ray:
+      - 93066a49b97b674a-ATL
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -63,5 +63,5 @@ http_interactions:
         discomfort when done with the head supported.  Helps prevent osteoporosis.  Improves
         digestion.  Relieves headache, insomnia, back pain, and fatigue.  Therapeutic
         for high blood pressure, asthma, flat feet, sciatica, and sinusitis.","url_svg":"https://res.cloudinary.com/dko1be2jy/image/upload/fl_sanitize/v1676483081/yoga-api/15_vkviqn.svg","url_png":"https://res.cloudinary.com/dko1be2jy/image/upload/fl_sanitize/v1676483081/yoga-api/15_vkviqn.png","url_svg_alt":"https://www.dropbox.com/s/75xa1bduu2u5y7d/downdog.svg?raw=1"}'
-  recorded_at: Wed, 22 Jan 2025 03:27:16 GMT
+  recorded_at: Mon, 14 Apr 2025 21:50:10 GMT
 recorded_with: VCR 6.3.1

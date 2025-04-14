@@ -1,12 +1,5 @@
 class YogaGateway
 
-  def self.get_poses
-    conn = Faraday.new(url: "https://yoga-api-nzy4.onrender.com/v1")
-    response = conn.get("poses")
-    handle_response(response)
-    json = JSON.parse(response.body, symbolize_names: true)
-  end
-
   def self.get_one_pose(id)
     conn = Faraday.new(url: "https://yoga-api-nzy4.onrender.com/v1")
     response = conn.get("poses?id=#{id}")
