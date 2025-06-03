@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
-  
+  before_action :current_user
+
   def current_user
     @current_user ||= self.authenticate_user
   end

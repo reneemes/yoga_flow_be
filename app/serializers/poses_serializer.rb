@@ -12,7 +12,7 @@ class PosesSerializer
           "type": "pose",
           "attributes": {
             "name": pose[:english_name],
-            "sanskrit_name": pose[:sanskrit_name],
+            "sanskrit_name": pose[:sanskrit_name_adapted],
             # "pose_description": pose[:pose_description],
             # "pose_benefits": pose[:pose_benefits],
             # "category": pose[:category],
@@ -32,7 +32,7 @@ class PosesSerializer
           "type": "pose",
           "attributes": {
             "name": pose[:english_name],
-            "sanskrit_name": pose[:sanskrit_name],
+            "sanskrit_name": pose[:sanskrit_name_adapted],
             "pose_description": pose[:pose_description],
             "pose_benefits": pose[:pose_benefits],
             # "category": pose[:category],
