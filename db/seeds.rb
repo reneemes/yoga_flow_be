@@ -15,6 +15,12 @@ routine = Routine.create!(
   difficulty: "Beginner",
   user_id: dolly.id,
 )
+routine2 = Routine.create!(
+  name: "Example Routine 2",
+  description: "This is another example routine for getting started",
+  difficulty: "Intermediate",
+  user_id: dolly.id,
+)
 pose1 = Pose.create!(
   id: 5,
   name: "Butterfly",
@@ -33,5 +39,7 @@ pose2 = Pose.create!(
   pose_benefits: "Gently stretches the hips, thighs, and ankles.  Calms the brain and helps relieve stress and fatigue.  Relieves back and neck pain when done with head and torso supported.",
   image_url: "https://res.cloudinary.com/dko1be2jy/image/upload/fl_sanitize/v1676483079/yoga-api/10_wzpo85.svg",
 )
-rp1 = RoutinePose.create!(routine_id: routine.id, pose_id: pose1.id)
-rp2 = RoutinePose.create!(routine_id: routine.id, pose_id: pose2.id)
+RoutinePose.create!(routine_id: routine.id, pose_id: pose1.id)
+RoutinePose.create!(routine_id: routine.id, pose_id: pose2.id)
+RoutinePose.create!(routine_id: routine2.id, pose_id: pose1.id)
+RoutinePose.create!(routine_id: routine2.id, pose_id: pose2.id)

@@ -1,4 +1,5 @@
 class Api::V1::PosesController < ApplicationController
+  skip_before_action :current_user, only: [:index, :show]
   rescue_from StandardError, with: :handle_standard_error
 
   def index
@@ -17,6 +18,7 @@ class Api::V1::PosesController < ApplicationController
   private
 
   def handle_standard_error
-    render json: { message: "Unable to fetch yoga poses from the Yoga API. Please try again later." }, status: :service_unavailable
+    render json: { message: "Unable to fetch yoga poses from the Yoga API. Please try again later." },
+    status: :service_unavailable
   end
 end
