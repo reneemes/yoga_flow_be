@@ -8,18 +8,18 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-dolly = User.create!(name: "Dolly Parton", email: "dollyP@email.com", password: "Jolene123")
+# dolly = User.create!(name: "Dolly Parton", email: "dollyP@email.com", password: "Jolene123")
 routine = Routine.create!(
   name: "Example Routine",
   description: "This is an example routine for getting started",
   difficulty: "Beginner",
-  user_id: dolly.id,
+  # user_id: dolly.id,
 )
 routine2 = Routine.create!(
   name: "Example Routine 2",
   description: "This is another example routine for getting started",
   difficulty: "Intermediate",
-  user_id: dolly.id,
+  # user_id: dolly.id,
 )
 pose1 = Pose.create!(
   id: 5,

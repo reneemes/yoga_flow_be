@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 01:36:28 GMT
+      - Tue, 03 Jun 2025 01:43:47 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,7 +31,7 @@ http_interactions:
       Etag:
       - W/"5f0-XewpGsa49np+eTlACz0fiDvN8N4"
       Rndr-Id:
-      - fbc05516-2c95-4aed
+      - 3dcada0d-7449-4313
       Vary:
       - Accept-Encoding
       X-Powered-By:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 94179eec7a066766-ATL
+      - 949b806ab9f81359-ATL
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -63,5 +63,5 @@ http_interactions:
         discomfort when done with the head supported.  Helps prevent osteoporosis.  Improves
         digestion.  Relieves headache, insomnia, back pain, and fatigue.  Therapeutic
         for high blood pressure, asthma, flat feet, sciatica, and sinusitis.","url_svg":"https://res.cloudinary.com/dko1be2jy/image/upload/fl_sanitize/v1676483081/yoga-api/15_vkviqn.svg","url_png":"https://res.cloudinary.com/dko1be2jy/image/upload/fl_sanitize/v1676483081/yoga-api/15_vkviqn.png","url_svg_alt":"https://www.dropbox.com/s/75xa1bduu2u5y7d/downdog.svg?raw=1"}'
-  recorded_at: Sun, 18 May 2025 01:36:28 GMT
+  recorded_at: Tue, 03 Jun 2025 01:43:47 GMT
 recorded_with: VCR 6.3.1

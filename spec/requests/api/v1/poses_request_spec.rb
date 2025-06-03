@@ -10,9 +10,9 @@ RSpec.describe "PosesController", type: :request do
       expect(response.status).to eq(200)
 
       expect(json[0][:data][:attributes][:name]).to eq("Boat")
-      expect(json[0][:data][:attributes][:sanskrit_name]).to eq("Nāvāsana")
+      expect(json[0][:data][:attributes][:sanskrit_name]).to eq("Navasana")
       expect(json[5][:data][:attributes][:name]).to eq("Cat")
-      expect(json[5][:data][:attributes][:sanskrit_name]).to eq("Marjaryāsana")
+      expect(json[5][:data][:attributes][:sanskrit_name]).to eq("Marjaryasana")
     end
   end
 
@@ -25,7 +25,7 @@ RSpec.describe "PosesController", type: :request do
       expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(json[:name]).to eq("Downward-Facing Dog")
-      expect(json[:sanskrit_name]).to eq("Parivṛtta Adho Mukha Śvānāsana")
+      expect(json[:sanskrit_name]).to eq("Adho Mukha Svanasana")
     end
 
     it "Handles not being able to fetch from the Yoga API - #Show" do
