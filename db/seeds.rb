@@ -19,7 +19,11 @@ routine2 = Routine.create!(
   name: "Example Routine 2",
   description: "This is another example routine for getting started",
   difficulty: "Intermediate",
-  # user_id: dolly.id,
+)
+routine3 = Routine.create!(
+  name: "Example Routine 3",
+  description: "This is yet another example routine for getting started",
+  difficulty: "Advanced",
 )
 pose1 = Pose.create!(
   id: 5,
