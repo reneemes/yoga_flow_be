@@ -24,9 +24,9 @@ This application uses RSpec for testing.
 bundle exec rspec
 ```
 
-## API Documentation
+# API Documentation
 
-### Users
+<!-- ### Users
 #### Create a Session (Login)
 Request:
 ```
@@ -60,9 +60,9 @@ Error Response:
   "status": 401,
   "message": "Invalid login credentials"
 }
-```
+``` -->
 
-### Poses
+## Poses
 Connected to the [Yoga API](https://github.com/alexcumplido/yoga-api).<br>
 #### Get All Poses
 Request: `/api/v1/poses`<br>
@@ -109,5 +109,69 @@ Response:
       "image_url": "URL"
     }
   }
+}
+```
+## Routines
+#### Get All Routines
+Request: `api/v1/routines`
+Response:
+```
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "routine",
+      "attributes": {
+        "name": "Example Routine",
+        "description": "This is an example routine for getting started",
+        "difficulty": "Beginner",
+        "routine_poses": [
+            {
+              "pose_id": 5,
+              "name": "Butterfly",
+              "sanskrit_name": "Baddha Konasana",
+              "translation_name": "baddha = bound, koṇa = angle, āsana = posture",
+              "description": "...",
+              "image_url": "URL"
+            },
+            {
+              "pose_id": 10,
+              "name": "Child's Pose",
+              "sanskrit_name": "Balasana",
+              "translation_name": "bala = child, āsana = posture",
+              "description": "...",
+              "image_url": "URL"
+            }
+          ]
+        }
+      },
+      {
+        "id": "2",
+        "type": "routine",
+        "attributes": {
+          "name": "Example Routine 2",
+          "description": "This is another example routine for getting started",
+          "difficulty": "Intermediate",
+          "routine_poses": [
+            {
+              "pose_id": 5,
+              "name": "Butterfly",
+              "sanskrit_name": "Baddha Konasana",
+              "translation_name": "baddha = bound, koṇa = angle, āsana = posture",
+              "description": "...",
+              "image_url": "URL"
+            },
+            {
+              "pose_id": 10,
+              "name": "Child's Pose",
+              "sanskrit_name": "Balasana",
+              "translation_name": "bala = child, āsana = posture",
+              "description": "...",
+              "image_url": "URL"
+            }
+        ]
+      }
+    }
+  ]
 }
 ```

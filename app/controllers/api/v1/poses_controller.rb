@@ -1,5 +1,5 @@
 class Api::V1::PosesController < ApplicationController
-  skip_before_action :current_user, only: [:index, :show]
+  # skip_before_action :current_user, only: [:index, :show]
   rescue_from StandardError, with: :handle_standard_error
 
   def index
