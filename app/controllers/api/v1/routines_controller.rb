@@ -6,4 +6,9 @@ class Api::V1::RoutinesController < ApplicationController
     all_routines = Routine.all
     render json: RoutineSerializer.new(all_routines)
   end
+
+  def show
+    routine = Routine.find_by(id: params[:id])
+    render json: RoutineSerializer.new(routine)
+  end
 end
