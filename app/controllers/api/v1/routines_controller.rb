@@ -1,5 +1,4 @@
 class Api::V1::RoutinesController < ApplicationController
-  # rescue_from StandardError, with: :handle_standard_error
 
   def index
     all_routines = Routine.all
@@ -26,7 +25,6 @@ class Api::V1::RoutinesController < ApplicationController
     end
   end
 
-
   private
 
   def routine_params
@@ -39,10 +37,9 @@ class Api::V1::RoutinesController < ApplicationController
       if pose
         RoutinePose.create(routine_id: routine.id, pose_id: pose.id)
       else
-        # Rails.logger.warn("Pose with api_id #{api_id} not found.")
         raise StandardError, "Pose with api_id #{api_id} not found."
       end
     end
   end
-
+  
 end
