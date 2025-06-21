@@ -4,13 +4,8 @@ default: &default
   database: yoga_flow_test
   username: renee
   password: password
-  host: localhost
-
-test:
-  adapter: postgresql
-  encoding: unicode
-  database: yoga_flow_test
-  username: renee
-  password: password
   host: postgres
   port: 5432
+
+test:
+  <<: *default
