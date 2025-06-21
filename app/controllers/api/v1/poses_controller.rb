@@ -1,5 +1,4 @@
 class Api::V1::PosesController < ApplicationController
-  # skip_before_action :current_user, only: [:index, :show]
   rescue_from StandardError, with: :handle_standard_error
 
   def index
@@ -10,15 +9,16 @@ class Api::V1::PosesController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    pose = YogaGateway.get_one_pose(id)
+    pose = Pose.find_by(api_id: params[:id])
+    # require 'pry'; binding.pry
     render json: PosesSerializer.format_one_pose(pose), status: :ok
+    # render json: { message: "Oops...", error: e.message }
   end
 
   private
 
-  def handle_standard_error
-    render json: { message: "Unable to fetch yoga poses from the Yoga API. Please try again later." },
-    status: :service_unavailable
-  end
+  # def handle_standard_error
+  #   render json: { message: "Unable to fetch yoga poses from the Yoga API. Please try again later." },
+  #   status: :service_unavailable
+  # end
 end

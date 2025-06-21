@@ -5,7 +5,12 @@ class ApplicationController < ActionController::API
   #   @current_user ||= self.authenticate_user
   # end
 
-  # private
+  private
+
+  def handle_standard_error
+    render json: { message: "Unable to fetch yoga poses from the Yoga API. Please try again later." },
+    status: :service_unavailable
+  end
 
   # def authenticate_user
   #   token = request.headers['Authorization']&.split(' ')&.last
