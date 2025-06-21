@@ -60,10 +60,7 @@ jobs:
         POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
       run: |
         cp config/database.yml.ci config/database.yml
-        bundle exec rails db:drop
         bundle exec rails db:create
-        bundle exec rails db:migrate
-        bundle exec rails db:seed
         bundle exec rails db:schema:load
 
     - name: Run rspec

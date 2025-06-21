@@ -4,8 +4,7 @@ default: &default
   database: yoga_flow_test
   username: renee
   password: password
-  host: postgres
-  port: 5432
+  host: localhost
 
 test:
   <<: *default
