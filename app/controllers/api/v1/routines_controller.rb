@@ -3,24 +3,29 @@ class Api::V1::RoutinesController < ApplicationController
 
   def index
     all_routines = Routine.all
-    render json: RoutineSerializer.new(all_routines)
+    render json: RoutineSerializer.new(all_routines), status: :ok
   end
 
   def show
     routine = Routine.find_by(id: params[:id])
-    render json: RoutineSerializer.new(routine)
+    render json: RoutineSerializer.new(routine), status: :ok
   end
 
   def create
     new_routine = Routine.create(routine_params)
 
     if new_routine.save
-      handle_poses(params[:poses], new_routine)
-      return render json: RoutineSerializer.new(new_routine)
+      begin
+        handle_poses(params[:poses], new_routine)
+        render json: RoutineSerializer.new(new_routine), status: :created
+      rescue => e
+        render json: { error: e.message }, status: :unprocessable_entity
+      end
     else
-      return render json: {"error occurred...": error}
+      render json: { error: "Routine creation was unsuccessful. Check all information is present." }, status: :bad_request
     end
   end
+
 
   private
 
@@ -34,7 +39,8 @@ class Api::V1::RoutinesController < ApplicationController
       if pose
         RoutinePose.create(routine_id: routine.id, pose_id: pose.id)
       else
-        Rails.logger.warn("Pose with api_id #{api_id} not found.")
+        # Rails.logger.warn("Pose with api_id #{api_id} not found.")
+        raise StandardError, "Pose with api_id #{api_id} not found."
       end
     end
   end

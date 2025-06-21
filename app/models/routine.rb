@@ -1,4 +1,5 @@
 class Routine < ApplicationRecord
-  # belongs_to :user
   has_many :routine_poses
+
+  validates :name, :description, :difficulty, presence: true
 end
