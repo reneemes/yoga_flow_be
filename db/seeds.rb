@@ -28,3 +28,5 @@ pose_json.each do |row|
     Rails.logger.error "Failed to create pose: #{row[:english_name]} - #{e.message}"
   end
 end
+
+dolly = User.create!(name: "Dolly Parton", email: "dollyP@email.com", password: "Jolene123")
