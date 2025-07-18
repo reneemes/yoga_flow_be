@@ -1,5 +1,6 @@
 class Api::V1::PosesController < ApplicationController
   rescue_from StandardError, with: :handle_standard_error
+  skip_before_action :current_user
 
   def index
     file_path = Rails.root.join('public', 'data', 'all_poses.json')

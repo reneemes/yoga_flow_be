@@ -1,8 +1,8 @@
 class Api::V1::RoutinesController < ApplicationController
 
   def index
-    all_routines = Routine.all
-    render json: RoutineSerializer.new(all_routines), status: :ok
+    routines = Routine.where(user_id: @current_user.id)
+    render json: RoutineSerializer.new(routines), status: :ok
   end
 
   def show
@@ -11,7 +11,8 @@ class Api::V1::RoutinesController < ApplicationController
   end
 
   def create
-    new_routine = Routine.create(routine_params)
+    # new_routine = Routine.create(routine_params)
+    new_routine = @current_user.routine.build(routine_params)
 
     if new_routine.save
       begin
