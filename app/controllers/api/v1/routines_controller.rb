@@ -11,7 +11,6 @@ class Api::V1::RoutinesController < ApplicationController
   end
 
   def create
-    # new_routine = Routine.create(routine_params)
     new_routine = @current_user.routine.build(routine_params)
 
     if new_routine.save
