@@ -6,10 +6,8 @@ class Api::V1::SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       token = generate_token(user_id: user.id)
       render json: { token: token, user: UserSerializer.new(user) }, status: :ok
-      # render json: UserSerializer.new(user)
     else
       render json: {"status": 401, "message": "Invalid login credentials"}, status: :unauthorized
-      # render json: ErrorSerializer.format_error(ErrorMessage.new("Invalid login credentials", 401)), status: :unauthorized
     end
   end
   

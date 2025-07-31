@@ -30,3 +30,31 @@ pose_json.each do |row|
 end
 
 dolly = User.create!(name: "Dolly Parton", email: "dollyP@email.com", password: "Jolene123")
+
+routine = Routine.create!(
+  name: 'Advanced Routine',
+  description: 'This is a new Advanced routine.',
+  difficulty: 'Advanced',
+  user_id: dolly.id
+)
+
+RoutinePose.create!(
+  routine_id: routine.id,
+  pose_id: 10
+)
+RoutinePose.create!(
+  routine_id: routine.id,
+  pose_id: 7
+)
+RoutinePose.create!(
+  routine_id: routine.id,
+  pose_id: 8
+)
+RoutinePose.create!(
+  routine_id: routine.id,
+  pose_id: 38
+)
+RoutinePose.create!(
+  routine_id: routine.id,
+  pose_id: 26
+)
