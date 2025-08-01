@@ -9,6 +9,7 @@
 #   end
 
 require 'csv'
+User.delete_all
 
 file_contents = File.read(Rails.root.join('public', 'data', 'all_poses.json')) 
 pose_json = JSON.parse(file_contents, symbolize_names: true)
@@ -29,32 +30,32 @@ pose_json.each do |row|
   end
 end
 
-dolly = User.create!(name: "Dolly Parton", email: "dollyP@email.com", password: "Jolene123")
+@dolly = User.create!(name: "Dolly Parton", email: "dollyP@email.com", password: "Jolene123")
 
-routine = Routine.create!(
+@routine = Routine.create!(
   name: 'Advanced Routine',
   description: 'This is a new Advanced routine.',
   difficulty: 'Advanced',
-  user_id: dolly.id
+  user_id: @dolly.id
 )
 
 RoutinePose.create!(
-  routine_id: routine.id,
+  routine_id: @routine.id,
   pose_id: 10
 )
 RoutinePose.create!(
-  routine_id: routine.id,
+  routine_id: @routine.id,
   pose_id: 7
 )
 RoutinePose.create!(
-  routine_id: routine.id,
+  routine_id: @routine.id,
   pose_id: 8
 )
 RoutinePose.create!(
-  routine_id: routine.id,
+  routine_id: @routine.id,
   pose_id: 38
 )
 RoutinePose.create!(
-  routine_id: routine.id,
+  routine_id: @routine.id,
   pose_id: 26
 )
