@@ -9,7 +9,6 @@
 #   end
 
 require 'csv'
-User.delete_all
 
 file_contents = File.read(Rails.root.join('public', 'data', 'all_poses.json')) 
 pose_json = JSON.parse(file_contents, symbolize_names: true)
